@@ -115,45 +115,75 @@ end loop</dataString>
         </entry>
         <entry>
           <string>externalInputs</string>
-          <string>RegRd1,RegRd2,RegWr,WrData,Write,rst,clk,RbAdd</string>
+          <string>RegRd1:5,RegRd2:5,RegWr:5,WrData:32,Write,rst,clk,RbAdd:5</string>
         </entry>
         <entry>
           <string>Code</string>
-          <string>//assings de rbdatas e converter para 32 bits
-module BancoReg( 
-input [31:0]RegRd1,
-input [31:0]RegRd2,
-input RegWr,
-input [31:0]WrData,
+          <string>module BancoReg(
+input [4:0] RegRd1,
+input [4:0] RegRd2,
+input [4:0] RegWr,
+input [31:0] WrData,
 input Write,
 input rst,
 input clk,
-input [4:0]RbAdd, //procurar onde põe
-output [31:0]RdData1,
-output [31:0]RdData2,
-output Rb);
-
-reg [31:0] dados [31:0];
-
-     always @ (posedge clk or negedge rst)
-	begin
-            if (rst == 0)
-		begin
-			dados[0] &lt;= 32&apos;b0;
-			dados[1] &lt;= 32&apos;b0;
-	//... a posição 0 recebe 0, 1 recebe 1 e por assim vai
-		end
-    	    else
-                Y &lt;= A;
-	    if (Write)
-		dados[RegWr] &lt;= WrData;
-        end
-
+input [4:0] RbAdd,
+output [31:0] RdData1,
+output [31:0] RdData2,
+output [31:0] Rb
+);
+	reg [31:0] banco [0:31];
+		
+		assign RdData1 = banco[RegRd1];
+		assign RdData2 = banco[RegRd2];
+		assign Rb = banco[RbAdd];
+		
+		always @ (posedge clk or negedge rst) 
+			begin
+				if(rst == 0)
+					begin
+						banco[0] &lt;= 0;
+						banco[1] &lt;= 1;
+						banco[2] &lt;= 2;
+						banco[3] &lt;= 3;
+						banco[4] &lt;= 4;
+						banco[5] &lt;= 5;
+						banco[6] &lt;= 6;
+						banco[7] &lt;= 7;
+						banco[8] &lt;= 8;
+						banco[9] &lt;= 9;
+						banco[10] &lt;= 10;
+						banco[11] &lt;= 11;
+						banco[12] &lt;= 12;
+						banco[13] &lt;= 13;
+						banco[14] &lt;= 14;
+						banco[15] &lt;= 15;
+						banco[16] &lt;= 16;
+						banco[17] &lt;= 17;
+						banco[18] &lt;= 18;
+						banco[19] &lt;= 19;
+						banco[20] &lt;= 20;
+						banco[21] &lt;= 21;
+						banco[22] &lt;= 22;
+						banco[23] &lt;= 23;
+						banco[24] &lt;= 24;
+						banco[25] &lt;= 25;
+						banco[26] &lt;= 26;
+						banco[27] &lt;= 27;
+						banco[28] &lt;= 28;
+						banco[29] &lt;= 29;
+						banco[30] &lt;= 30;
+						banco[31] &lt;= 31;
+					end
+				else if (Write == 1) begin
+					banco[RegWr] &lt;= WrData;
+				end
+			end
 endmodule</string>
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>RdData1,RdData2,Rb</string>
+          <string>RdData1:32,RdData2:32,Rb:32</string>
         </entry>
         <entry>
           <string>Width</string>
@@ -212,6 +242,10 @@ endmodule</string>
         <entry>
           <string>Label</string>
           <string>RbAdd</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>5</int>
         </entry>
       </elementAttributes>
       <pos x="340" y="320"/>
