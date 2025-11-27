@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
-  <version>1</version>
+  <version>2</version>
   <attributes/>
   <visualElements>
     <visualElement>
@@ -20,8 +20,14 @@
         </entry>
         <entry>
           <string>Code</string>
-          <string>module somaPcDesvio (input endereco, desvio, output  enderecoDesvio);
-	
+          <string>module somaPcDesvio (
+input [31:0]endereco,
+input [31:0]desvio,
+output reg [31:0]enderecoDesvio
+);
+	always @(*)begin
+		enderecoDesvio={(endereco + desvio), 2&apos;b0};
+	end
 endmodule</string>
         </entry>
         <entry>
