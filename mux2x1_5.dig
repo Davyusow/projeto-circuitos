@@ -66,17 +66,17 @@
         </entry>
         <entry>
           <string>externalInputs</string>
-          <string>A,B,S</string>
+          <string>A:5,B:5,S</string>
         </entry>
         <entry>
           <string>Code</string>
-          <string>module Mux2x1_5bits(input A, B, S, output Y);
+          <string>module Mux2x1_5bits(input [4:0]A, input [4:0]B,input S, output [4:0]Y);
    assign Y = (S == 0 ? A : B);
 endmodule</string>
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>Y</string>
+          <string>Y:5</string>
         </entry>
       </elementAttributes>
       <pos x="600" y="200"/>
