@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
-  <version>1</version>
+  <version>2</version>
   <attributes/>
   <visualElements>
     <visualElement>
@@ -68,8 +68,8 @@
         </entry>
         <entry>
           <string>Code</string>
-          <string>module Soma4(input A, output Y);
-    
+          <string>module Soma4(input wire [31:0]A, output wire [31:0]Y);
+    assign Y = A + 32&apos;d4;
 endmodule</string>
         </entry>
         <entry>
