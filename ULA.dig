@@ -99,11 +99,9 @@
           <string>module ULA(
 	input [31:0] operand1, operand2,
 	input [3:0] ALU_control_vector,
-	output [31:0] ALU_result,
+	output reg [31:0] ALU_result,
 	output reg zero
 );
-
-	reg [31:0] ALU_result;
 
 	always @(*) begin
            case (ALU_control_vector)

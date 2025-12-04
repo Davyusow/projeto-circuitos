@@ -670,7 +670,7 @@
         </entry>
         <entry>
           <string>lastDataFile</string>
-          <file>TesteBeq.hex</file>
+          <file>/home/davyusow/Projetos/Verilog/projeto-circuitos/drive-download-20251204T161430Z-1-001/TesteBeq.hex</file>
         </entry>
         <entry>
           <string>autoReload</string>
@@ -900,10 +900,8 @@ endmodule</string>
 	input [31:0] operand1, operand2,
 	input [3:0] ALU_control_vector,
         output reg zero,
-	output [31:0] ALU_result
+	output reg [31:0] ALU_result
 );
-
-	reg [31:0] ALU_result;
 
 	always @(*) begin
            case (ALU_control_vector)
