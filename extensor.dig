@@ -68,13 +68,13 @@
         </entry>
         <entry>
           <string>Code</string>
-          <string>module ExtensorSinal(input [15:0]A, output Y);
-   assign Y = (A[15] == 1 ? {31&apos;b1} : {31&apos;b0});
+          <string>module ExtensorSinal(input [15:0] A, output [31:0] Y);
+    assign Y = {{16{A[15]}}, A};
 endmodule</string>
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>Y: 32</string>
+          <string>Y:32</string>
         </entry>
       </elementAttributes>
       <pos x="680" y="180"/>

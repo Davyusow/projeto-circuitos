@@ -13,14 +13,14 @@
         <entry>
           <string>Testdata</string>
           <testData>
-            <dataString>A B Op Y
- loop(i,5)
+            <dataString>A B Op Result
+ loop(i,6)
    let a = random(1&lt;&lt;8);
    let b = random(1&lt;&lt;8);
    (a) (b) 0 (a &amp; b)
    (a) (b) 1 (a | b)
    (a) (b) 2 (a + b)
-   (a) (b) 3 (a - b)
+   (a) (b) 6 (a - b)
  end loop</dataString>
           </testData>
         </entry>
