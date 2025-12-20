@@ -7,8 +7,16 @@
       <elementName>Clock</elementName>
       <elementAttributes>
         <entry>
+          <string>runRealTime</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
           <string>Label</string>
           <string>Clk</string>
+        </entry>
+        <entry>
+          <string>Frequency</string>
+          <int>10</int>
         </entry>
       </elementAttributes>
       <pos x="-1780" y="-740"/>
@@ -670,7 +678,7 @@
         </entry>
         <entry>
           <string>lastDataFile</string>
-          <file>/home/davyusow/Projetos/Verilog/projeto-circuitos/testes/teste_LW.asm</file>
+          <file>/home/davyusow/Projetos/Verilog/projeto-circuitos/testes/TesteBeq.hex</file>
         </entry>
         <entry>
           <string>autoReload</string>
@@ -1234,7 +1242,7 @@ input [31:0]desvio,
 output reg [31:0]enderecoDesvio
 );
 	always @(*)begin
-		enderecoDesvio={(endereco + desvio), 2&apos;b0};
+	   enderecoDesvio=(endereco + desvio * 4);
 	end
 endmodule</string>
         </entry>

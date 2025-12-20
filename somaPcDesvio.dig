@@ -26,7 +26,7 @@ input [31:0]desvio,
 output reg [31:0]enderecoDesvio
 );
 	always @(*)begin
-		enderecoDesvio={(endereco + desvio), 2&apos;b0};
+	   enderecoDesvio=(endereco + desvio * 4);
 	end
 endmodule</string>
         </entry>
